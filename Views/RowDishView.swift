@@ -13,14 +13,16 @@ struct RowDishView: View {
         
         var body: some View {
                 HStack {
-                        Spacer().frame(width: 12) // écarte l'image du bord du HStack
+                        
                         Image(dish.imageName)
                                 .resizable()
-                                .frame(width:112, height: 86)
+                                .frame(width:100, height: 90)
                                 .cornerRadius(8)
-                        Spacer().frame(width: 16) // écarte l'image du text
+                               .padding(.leading, 4)//separe l'image du bord
+                        Spacer().frame(width: 20) // écarte l'image du text
                         
-                        VStack(alignment: .leading, spacing: 8) {
+                        VStack(alignment: .leading, spacing: 10) {
+                                //Spacer().frame(height: 8)
                                 Text(dish.name)
                                         .font(.custom("Plus Jakarta Sans", size: 14))
                                         .padding(.top)
@@ -31,23 +33,22 @@ struct RowDishView: View {
                                         .foregroundStyle(.white)
                                         .colorMultiply(.gray)
                                         .fixedSize(horizontal: false, vertical: true) // Forcer le texte a prendre la verticale
-                                
+                                        .frame(maxWidth: 180, alignment: .leading) //Évite que le texte aille trop à droite
                                 HStack {
                                         Text("\(dish.price) €")
                                                 .font(.custom("Plus Jakarta Sans", size: 12))
                                                 .foregroundStyle(.black)
-                                        Spacer()
                                         
                                         SpicyView(dish: dish)
-                                                .padding()
+                                                .padding(.leading, 75)
                                 }
                         }
                 }
+                .frame(maxWidth: .infinity) //Le HStack occupe toute la largeur
                 .background(Color.white) // Fond blanc pour la carte
                 .cornerRadius(12) // Bords arrondis
-                .shadow(color: .black.opacity(0.1), radius: 4, x: 0, y: 2) // Ombre légère
-                .padding(.horizontal,15) // écartement H par rapport aux bords
-                .frame(width: 400, height: 110) // la valeur width de la maquette est 335
+                .shadow(color: .black.opacity(0.6), radius: 4, x: 0, y: 2) // Ombre légère
+                .padding(.horizontal, 20) // écarte HStack du bord
         }
 }
 
