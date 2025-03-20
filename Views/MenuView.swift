@@ -14,7 +14,7 @@ struct MenuView: View {
         var body: some View {
 
                         ScrollView {
-                                VStack(spacing: 16) {
+                                VStack(spacing: 14) {
                                         
                                         //Section Entrées
                                         VStack(alignment: .leading, spacing: 8) {
@@ -30,12 +30,13 @@ struct MenuView: View {
                                                                 DetailDishView(dish: dish)
                                                         } label: {
                                                                 RowDishView(dish: dish)
-                                                                        .padding(.vertical, 4) //afin d'écarter les RoWDishView
+                                                                        .padding(.vertical, 1) //afin d'écarter les RoWDishView
                                                         }
                                                 }
                                         }
                                         
                                         //Section Plats Principaux
+                                        // Cette section est égale à la précedente
                                         VStack(alignment: .leading, spacing: 8) {
                                                 Text("Plats Principaux")
                                                         .font(.custom("Plus Jakarta Sans", size: 14))
@@ -50,14 +51,13 @@ struct MenuView: View {
                                                         } label: {
                                                                 
                                                                 RowDishView(dish: dish)
-                                                                        .padding(.vertical, 4)
+                                                                        .padding(.vertical, 1)
                                                         }
                                                 }
                                         }
                                 }
-                                .padding(.horizontal) //Assurer une bonne marge à gauche/droite
+                                .padding(.horizontal, 3) //marge gauche/droite de chaque RowDishView
                                 .padding(.top, -10) //Monte le top de la VStack principale
-                               // .padding(.bottom, 60)
                         }
                         .background(Color.orange)
                         .navigationTitle("")
@@ -77,3 +77,7 @@ struct MenuView: View {
 #Preview {
                 MenuView()
 }
+
+//TODO: créer un fichier de constantes pour stocker mes valeurs de taille/padding. De façon à modifier directement les valeurs sur le même fichier. Taille de la police, etc.
+
+//MARK:
