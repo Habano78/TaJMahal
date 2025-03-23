@@ -11,7 +11,7 @@ import SwiftUI
 struct TaJMahalApp: App {
     var body: some Scene {
         WindowGroup {
-                WelcomeView()
+                WelcomeView(viewModel: ViewModel())
         }
     }
 }

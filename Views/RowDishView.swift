@@ -8,15 +8,14 @@
 import SwiftUI
 
 struct RowDishView: View {
-        
         let dish: Dish
-        
+
         var body: some View {
                 HStack {
                         
                         Image(dish.imageName)
                                 .resizable()
-                                .frame(width:100, height: 90)
+                                .frame(width:120, height: 90)
                                 .cornerRadius(8)
                                .padding(.leading, 4)//separe l'image du bord
                         Spacer().frame(width: 20) // écarte l'image du text
@@ -24,19 +23,19 @@ struct RowDishView: View {
                         VStack(alignment: .leading, spacing: 10) {
                                 //Spacer().frame(height: 8)
                                 Text(dish.name)
-                                        .font(.custom("Plus Jakarta Sans", size: 14))
+                                     .font(Constants.FontSize.medium)
                                         .padding(.top)
                                         .foregroundStyle(.black)
                                 
                                 Text(dish.description)
-                                        .font(.custom("Plus Jakarta Sans", size: 12))
-                                        .foregroundStyle(.white)
+                                     .font(Constants.FontSize.small)
+                                        .foregroundStyle(.white)// avec la ligne qui suit, rend la couleur gris
                                         .colorMultiply(.gray)
                                         .fixedSize(horizontal: false, vertical: true) // Forcer le texte a prendre la verticale
                                         .frame(maxWidth: 180, alignment: .leading) //Évite que le texte aille trop à droite
                                 HStack {
                                         Text("\(dish.price) €")
-                                                .font(.custom("Plus Jakarta Sans", size: 12))
+                                             .font(Constants.FontSize.small)
                                                 .foregroundStyle(.black)
                                         
                                         SpicyView(dish: dish)
