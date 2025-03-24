@@ -12,58 +12,55 @@ struct DetailDishView: View {
         let viewModel: ViewModel
         
         var body: some View {
-                VStack(alignment: .leading, spacing: 20) {
-                        HStack {
-                                Spacer() //pressionne l’image
+                VStack(alignment: .leading, spacing: 15) {
+                        
                                 ZStack(alignment: .topTrailing) {
-                                        Image(dish.imageName)
-                                                .resizable()
-                                                .frame(maxWidth: .infinity) // l'image prend toute la largeur dispo
-                                                .scaledToFit()
-                                                .clipped()
-                                                .cornerRadius(12)
-                                                .padding(.horizontal, 10)//marge gauche
+                                                Image(dish.imageName)
+                                                        .resizable()
+                                                        .frame(maxWidth: .infinity) // l'image prend toute la largeur dispo
+                                                        .scaledToFit()
+                                                        .clipped()
+                                                        .cornerRadius(12)
+                                                        //.padding(.horizontal)
                                         SpicyView(dish: dish)
-                                                .frame(width: 70, height: 30)
+                                                .frame(width: 74, height: 22) //valeurs maquette
                                                 .background(Color.white)
                                                 .cornerRadius(18)
-                                                .padding(.horizontal, 30)
-                                                .padding(.vertical, 10)
+                                                .padding(.top, 15)
+                                                .padding(.horizontal,20)
                                 }
-                                Spacer() // pressionne l’image
-                        }
-                        HStack {
-                                Spacer()
-                                
-                                VStack(alignment: .leading, spacing: 10) {
+                                VStack(alignment: .leading, spacing: 10) { //écartement entre les éléments de la VStack
                                         Section(header: Text("Allergènes:")) {
                                                 Text(dish.allergens)
                                                         .font(Constants.FontSize.medium)
                                                         .foregroundStyle(.gray)
                                                         .colorMultiply(.gray)
+                                                        .multilineTextAlignment(.leading)
+                                                        .lineSpacing(1)
                                         }
+                                        
                                         Divider()
+                                        
                                         Section(header: Text("Ingrédients:")) {
                                                 Text(dish.ingredients)
                                                         .font(Constants.FontSize.medium)
                                                         .foregroundStyle(.gray)
                                                         .colorMultiply(.gray)
+                                                        .multilineTextAlignment(.leading)
+                                                        .lineSpacing(2)
                                                 
                                                 NavigationLink {
-                                                        MenuView(
-                                                                        apetizers: viewModel.apetizerArray,
-                                                                        mainCourses: viewModel.mainCourseArray
-                                                        )
+                                                        MenuView(apetizers: viewModel.apetizerArray,
+                                                                        mainCourses: viewModel.mainCourseArray)
                                                 } label: {
+                                                        EmptyView()
                                                 }
                                         }
                                 }
-                                .padding(.horizontal, 20)
-                        }
                 }
-                .padding(.top, 6)
-                .navigationBarTitle(dish.name, displayMode: .inline) // pas de titre dans la barre
-                //.toolbar
+                .padding(.horizontal, 20)
+                .navigationTitle(dish.name)
+                .navigationBarTitleDisplayMode(.inline)
         }
 }
 

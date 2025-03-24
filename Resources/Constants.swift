@@ -13,6 +13,7 @@ struct Constants {
         struct FontSize {
                 static let small = Font.custom("Plus Jakarta Sans", size: 12)
                 static let medium = Font.custom("Plus Jakarta Sans", size: 14)
+                static let button = Font.custom("Plus Jakarta Sans", size: 16)
                 static let large = Font.custom("Plus Jakarta Sans", size: 18)
             }
 }

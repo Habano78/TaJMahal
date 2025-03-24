@@ -23,7 +23,6 @@ import SwiftUI
                     .navigationTitle("Menu")
                     .font(Constants.FontSize.large)
                     .navigationBarTitleDisplayMode(.inline)
-                    
             }
         }
 
