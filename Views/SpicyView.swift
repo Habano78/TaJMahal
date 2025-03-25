@@ -13,20 +13,12 @@ struct SpicyView: View {
 
         var body: some View {
                 
-                HStack(spacing: 1) {
-                        ForEach(0..<3, id: \.self) { index in
-                                if index < dish.spiceLevel.rawValue {
-                                        Image("chiliRed")
-                                                .resizable()
-                                                .frame(width: 12, height: 12)
-                                                .padding().frame(width: 16)//écarte les piments comme dans la maquette
-                                } else {
-                                        Image("Piment")
-                                                .resizable()
-                                                .frame(width: 12, height: 12)
-                                                .padding().frame(width: 16) //écarte les piments comme dans la maquette
-                                }
-                        }
+                HStack(spacing: 4) { 
+                    ForEach(0..<3, id: \.self) { index in
+                        Image(index < dish.spiceLevel.rawValue ? "chiliRed" : "Piment")
+                            .resizable()
+                            .frame(width: 12, height: 12)
+                    }
                 }
         }
 }
