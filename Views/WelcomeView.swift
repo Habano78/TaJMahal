@@ -1,3 +1,10 @@
+//
+//  WelcomeView.swift
+//  TaJMahal
+//
+//  Created by Amandine Cousin on 31/10/2023.
+//
+
 import SwiftUI
 
 // Page d'accueil
@@ -12,14 +19,14 @@ struct WelcomeView: View {
                                         .scaledToFit()
                                         .frame(maxWidth: .infinity)
                                         .clipped()
+                               
                                 HStack(alignment: .center) {
                                         VStack(alignment: .leading, spacing: 6) {
                                                 Text("Restaurant Indien")
-                                                     .font(Constants.FontSize.small)
-                                                        .foregroundStyle(.white)
-                                                        .colorMultiply(.gray)
+                                                        .font(Theme.FontSize.small)
+                                                        .foregroundColor(Theme.Colors.textGray)
                                                 Text("Taj Mahal")
-                                                        .font(Constants.FontSize.large)
+                                                        .font(Theme.FontSize.large)
                                         }
                                         .frame(width: 280, alignment: .leading)
                                         
@@ -30,63 +37,63 @@ struct WelcomeView: View {
                                                 .colorMultiply(.gray)
                                 }
                                 .padding(.top, 20)
+                                
                                 HStack(alignment: .bottom) {
                                         Image("Vector")
                                         Text("Mardi")
-                                                .font(Constants.FontSize.small)
+                                                .font(Theme.FontSize.small)
                                                 .foregroundStyle(.black)
                                         Spacer()
                                         Text("11H30-14h30 . 18h30-22h00")
-                                                .font(Constants.FontSize.small)
+                                                .font(Theme.FontSize.small)
                                                 .foregroundStyle(.black)
                                 }
                                 HStack {
                                         Image("Icône - Type de Service")
                                         Text("Type de Service")
-                                                .font(Constants.FontSize.small)
+                                                .font(Theme.FontSize.small)
                                         Spacer()
                                         Text("À emporter")
-                                                .font(Constants.FontSize.small)
+                                                .font(Theme.FontSize.small)
                                 }
                                 HStack {
                                         Image("Localisation")
                                         Text("12 Avenue de la Brique-75010 Paris")
-                                                .font(Constants.FontSize.small)
+                                                .font(Theme.FontSize.small)
                                 }
                                 HStack {
                                         Image("Site")
                                         Text("www.tajmahal.fr")
-                                                .font(Constants.FontSize.small)
+                                                .font(Theme.FontSize.small)
                                 }
-                                
                                 HStack {
                                         Image("Téléphone")
                                         Text("06 12 34 56 78")
-                                                .font(Constants.FontSize.small)
+                                                .font(Theme.FontSize.small)
                                 }
                                 //Le bouton fait partie de la VStack
                                 NavigationLink {
                                         MenuView(
-                                                                apetizers: viewModel.apetizerArray,
-                                                                mainCourses: viewModel.mainCourseArray
-                                                            )
+                                                apetizers: viewModel.apetizerArray,
+                                                mainCourses: viewModel.mainCourseArray
+                                        )
                                 } label: {
                                         ZStack {
-                                                Color("CustomRed")
+                                                Color(Theme.Colors.redButton)
                                                         .frame(height: 40)
                                                 Text("Accéder au menu")
                                                         .foregroundStyle(.white)
-                                                        .font(Constants.FontSize.button)
+                                                        .font(Theme.FontSize.button)
                                         }
                                         .frame(maxWidth: .infinity)
-                                        .cornerRadius(8)
+                                        .cornerRadius(10)
                                         .padding(.top,10)
                                 }
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.horizontal, 20)
-                        .navigationBarBackButtonHidden(false)
-                        .navigationBarTitle("", displayMode: .inline)
+                        .navigationTitle("")
+                        .navigationBarHidden(true) //pas de barre du tout (ni titre, ni flèche)
                 }
                 .accentColor(.black)
         }

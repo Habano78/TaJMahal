@@ -13,13 +13,13 @@ struct DishSectionView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(title)
-                .font(Constants.FontSize.medium)
+                .font(Theme.FontSize.medium)
                 .padding(.leading, 25)
                 .padding(.top)
 
             ForEach(dishes) { dish in
                 NavigationLink {
-                    DetailDishView(dish: dish, viewModel: ViewModel())
+                    DetailDishView(dish: dish)
                 } label: {
                     RowDishView(dish: dish)
                         .padding(.vertical, 1)
@@ -30,5 +30,6 @@ struct DishSectionView: View {
 }
 
 #Preview {
-        DishSectionView(title: "Entrées", dishes: [Dish(name: "Biryani aux légumes", description: "Riz parfumé cuit avec des légumes et des épices", allergens: "Noix de cajou, riz", ingredients: "Riz basmati, légumes assortis (carottes, petits pois, haricots verts), noix de cajou, raisins secs, gingembre, poudre de curcuma, poudre de cumin, poudre de coriandre, piment en poudre", spiceLevel: .medium, imageName: "Biryani", price: "10,50")])
+        DishSectionView(title: "Entrées",
+                        dishes: [Dish.example])
 }

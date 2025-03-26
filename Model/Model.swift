@@ -25,6 +25,18 @@ enum SpiceLevel: Int, CaseIterable  {
                 var spiceLevel: SpiceLevel
                 var imageName: String
                 var price: String
+                
+                
+                //faciliter les #Preview sans charger tout le ViewModel
+                    static let example = Dish(
+                        name: "Chicken Tikka Masala",
+                        description: "Poulet mariné, grillé et servi dans une sauce masala crémeuse et légèrement épicée.",
+                        allergens: "Lait, yaourt, beurre clarifié",
+                        ingredients: "Poulet, tomates, crème, épices indiennes, ail, oignon, coriandre",
+                        spiceLevel: .medium,
+                        imageName: "TikkaMasala",
+                        price: "13,50"
+                    )
         }
         
         

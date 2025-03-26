@@ -9,64 +9,68 @@ import SwiftUI
 
 struct DetailDishView: View {
         let dish: Dish
-        let viewModel: ViewModel
+        @Environment(\.dismiss) private var dismiss // pour gérer le retour
+        
         
         var body: some View {
-                VStack(alignment: .leading, spacing: 15) {
+                VStack(alignment: .leading, spacing: 20) {
                         
-                                ZStack(alignment: .topTrailing) {
-                                                Image(dish.imageName)
-                                                        .resizable()
-                                                        .frame(maxWidth: .infinity) // l'image prend toute la largeur dispo
-                                                        .scaledToFit()
-                                                        .clipped()
-                                                        .cornerRadius(12)
-                                                        //.padding(.horizontal)
-                                        SpicyView(dish: dish)
-                                                .frame(width: 74, height: 22) //valeurs maquette
-                                                .background(Color.white)
-                                                .cornerRadius(18)
-                                                .padding(.top, 15)
-                                                .padding(.horizontal,20)
+                        ZStack(alignment: .topTrailing) {
+                                Image(dish.imageName)
+                                        .resizable()
+                                        .frame(maxWidth: .infinity) // l'image prend toute la largeur dispo
+                                        .scaledToFit()
+                                        .clipped()
+                                        .cornerRadius(12)
+                                
+                                SpicyView(dish: dish)
+                                        .frame(width: 74, height: 22) //valeurs maquette
+                                        .background(Theme.Colors.background)
+                                        .cornerRadius(10)
+                                        .padding(.top, 15)
+                                        .padding(.horizontal,20)
+                        }
+                        VStack(alignment: .leading, spacing: 10) { //écartement entre les éléments de la VStack
+                                Section(header: Text("Allergènes:")) {
+                                        Text(dish.allergens)
+                                                .font(Theme.FontSize.medium)
+                                                .foregroundColor(Color(red: 0.302, green: 0.302, blue: 0.302))
+                                                .multilineTextAlignment(.leading)
+                                                .lineSpacing(2)
                                 }
-                                VStack(alignment: .leading, spacing: 10) { //écartement entre les éléments de la VStack
-                                        Section(header: Text("Allergènes:")) {
-                                                Text(dish.allergens)
-                                                        .font(Constants.FontSize.medium)
-                                                        .foregroundStyle(.gray)
-                                                        .colorMultiply(.gray)
-                                                        .multilineTextAlignment(.leading)
-                                                        .lineSpacing(1)
-                                        }
-                                        
-                                        Divider()
-                                        
-                                        Section(header: Text("Ingrédients:")) {
-                                                Text(dish.ingredients)
-                                                        .font(Constants.FontSize.medium)
-                                                        .foregroundStyle(.gray)
-                                                        .colorMultiply(.gray)
-                                                        .multilineTextAlignment(.leading)
-                                                        .lineSpacing(2)
-                                                
-                                                NavigationLink {
-                                                        MenuView(apetizers: viewModel.apetizerArray,
-                                                                        mainCourses: viewModel.mainCourseArray)
-                                                } label: {
-                                                        EmptyView()
-                                                }
-                                        }
+                                
+                                Divider()
+                                
+                                Section(header: Text("Ingrédients:")) {
+                                        Text(dish.ingredients)
+                                                .font(Theme.FontSize.medium)
+                                                .foregroundColor(Theme.Colors.textGray)
+                                                .multilineTextAlignment(.leading) //simple retour a la ligne
+                                                .frame(maxWidth: .infinity, alignment: .leading) //Force le texte aller à gauche
+                                                .lineSpacing(2)
                                 }
+                        }
                 }
+                //SwiftUI affiche le titre de la vue précédente dans le bouton retour par défaut.Cette solution permet de cacher "Menu"
+                //SwiftUI ignore .font(...) sur navigationTitle.
                 .padding(.horizontal, 20)
                 .navigationTitle(dish.name)
                 .navigationBarTitleDisplayMode(.inline)
+                .navigationBarBackButtonHidden(true)
+                .toolbar {
+                        ToolbarItem(placement: .navigationBarLeading) {
+                                Button(action: {
+                                        dismiss()
+                                }) {
+                                        Image(systemName: "chevron.left")
+                                                .foregroundColor(.black)
+                                }
+                        }
+                }
         }
 }
 
 #Preview {
-        DetailDishView(
-                dish: Dish(name: "Chicken Tikka Masala", description: "Poulet mariné, grillé et servi dans une sauce masala.", allergens: "Lait, yaourt, beurre clarifié (ghee), crème fraîche, crème de coco, ail, oignon.", ingredients: "Huile, beurre clarifié (ghee), oignon, ail, gingembre, poudre de curcuma, poudre de cumin, poudre de coriandre, piment en poudre, tomates en purée, crème fraîche, crème de coco, sel, coriandre fraîche.", spiceLevel: .medium, imageName: "Tikka Masala", price: "13,0"),
-        viewModel: ViewModel()
-        )
+        DetailDishView(dish: Dish.example)
 }
+
