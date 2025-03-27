@@ -11,17 +11,17 @@ struct RowDishView: View {
         let dish: Dish
         
         var body: some View {
-                HStack(alignment: .top) {
-                        VStack {
-                                Image(dish.imageName)
-                                        .resizable()
-                                        .frame(width:112, height: 86)
-                                        .fixedSize()
-                                        .cornerRadius(10)
-                                        .padding(.leading)
-                        } .padding([.top, .bottom], 15)
+                HStack {
                         
-                        VStack(alignment: .leading, spacing: 10) {
+                        Image(dish.imageName)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width:112, height: 86)
+                                .fixedSize()
+                                .cornerRadius(10)
+                                .padding(5)
+                        
+                        VStack(alignment: .leading, spacing: 8) {
                                 Text(dish.name)
                                         .font(Theme.FontSize.medium)
                                         .foregroundColor(Theme.Colors.textGray)
@@ -29,7 +29,8 @@ struct RowDishView: View {
                                 Text(dish.description)
                                         .font(Theme.FontSize.small)
                                         .foregroundColor(Theme.Colors.textGray)
-                                HStack {
+                              
+                                HStack(alignment: .firstTextBaseline){
                                         Text("\(dish.price) €")
                                                 .font(Theme.FontSize.small)
                                                 .foregroundColor(Theme.Colors.textGray)
@@ -37,15 +38,12 @@ struct RowDishView: View {
                                         Spacer()
                                         
                                         SpicyView(dish: dish)
-                                                .padding(.trailing, 15)
+                                            //    .padding(.trailing, 15)
                                 }
-                        }.padding(.leading, 8)
+                        }
+                        .padding(.leading, 4)
+                        .padding(.trailing, 10)
                 }
-                .frame(maxWidth: .infinity) //Le HStack occupe toute la largeur
-                .background(Color.white) // Fond blanc pour la carte
-                .cornerRadius(12) // Bords arrondis
-                .shadow(color: .black.opacity(0.3       ), radius: 2, x: 0, y: 0) // Ombre légère
-                .padding(.horizontal, 15) // écarte HStack du bord
         }
 }
 

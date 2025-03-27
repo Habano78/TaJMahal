@@ -83,7 +83,7 @@ struct WelcomeView: View {
                                                         .frame(height: 40)
                                                 Text("Accéder au menu")
                                                         .foregroundStyle(.white)
-                                                        .font(Theme.FontSize.button)
+                                                        .font(Theme.FontSize.bold)
                                         }
                                         .frame(maxWidth: .infinity)
                                         .cornerRadius(10)

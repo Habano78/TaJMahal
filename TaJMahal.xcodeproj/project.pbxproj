@@ -6,15 +6,6 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		22EC04EB2D900193008B72B8 /* DishSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EC04EA2D900193008B72B8 /* DishSectionView.swift */; };
-		22F2DC0D2D8B7A5000D8175E /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F2DC0C2D8B7A5000D8175E /* WelcomeView.swift */; };
-		22F2DC0F2D8B7A5C00D8175E /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F2DC0E2D8B7A5C00D8175E /* MenuView.swift */; };
-		22F2DC112D8B7A7600D8175E /* DetailDishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F2DC102D8B7A7600D8175E /* DetailDishView.swift */; };
-		22F2DC132D8B7A8900D8175E /* RowDishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F2DC122D8B7A8900D8175E /* RowDishView.swift */; };
-		22F2DC152D8B7AA800D8175E /* SpicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F2DC142D8B7AA800D8175E /* SpicyView.swift */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXContainerItemProxy section */
 		223151F82D8B747A00AD19F7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -36,43 +27,25 @@
 		223151E72D8B747900AD19F7 /* TaJMahal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaJMahal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		223151F72D8B747A00AD19F7 /* TaJMahalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaJMahalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		223152012D8B747A00AD19F7 /* TaJMahalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaJMahalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		22EC04EA2D900193008B72B8 /* DishSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishSectionView.swift; sourceTree = "<group>"; };
-		22F2DC0C2D8B7A5000D8175E /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
-		22F2DC0E2D8B7A5C00D8175E /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
-		22F2DC102D8B7A7600D8175E /* DetailDishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDishView.swift; sourceTree = "<group>"; };
-		22F2DC122D8B7A8900D8175E /* RowDishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowDishView.swift; sourceTree = "<group>"; };
-		22F2DC142D8B7AA800D8175E /* SpicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpicyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		22A65BE92D956A0B00A61E85 /* Exceptions for "TaJMahal" folder in "TaJMahal" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 223151E62D8B747900AD19F7 /* TaJMahal */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		223151E92D8B747900AD19F7 /* TaJMahal */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				22A65BE92D956A0B00A61E85 /* Exceptions for "TaJMahal" folder in "TaJMahal" target */,
+			);
 			path = TaJMahal;
-			sourceTree = "<group>";
-		};
-		223151FA2D8B747A00AD19F7 /* TaJMahalTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = TaJMahalTests;
-			sourceTree = "<group>";
-		};
-		223152042D8B747A00AD19F7 /* TaJMahalUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = TaJMahalUITests;
-			sourceTree = "<group>";
-		};
-		2241A8732D8D6B850055723C /* Resources */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		22F2DC032D8B79B600D8175E /* Model */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Model;
-			sourceTree = "<group>";
-		};
-		22F2DC042D8B79BF00D8175E /* ModelView */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ModelView;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -105,13 +78,7 @@
 		223151DE2D8B747900AD19F7 = {
 			isa = PBXGroup;
 			children = (
-				22F2DC032D8B79B600D8175E /* Model */,
-				22F2DC042D8B79BF00D8175E /* ModelView */,
-				22F2DC0B2D8B7A2B00D8175E /* Views */,
-				2241A8732D8D6B850055723C /* Resources */,
 				223151E92D8B747900AD19F7 /* TaJMahal */,
-				223151FA2D8B747A00AD19F7 /* TaJMahalTests */,
-				223152042D8B747A00AD19F7 /* TaJMahalUITests */,
 				223151E82D8B747900AD19F7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -124,19 +91,6 @@
 				223152012D8B747A00AD19F7 /* TaJMahalUITests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		22F2DC0B2D8B7A2B00D8175E /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				22F2DC0C2D8B7A5000D8175E /* WelcomeView.swift */,
-				22F2DC0E2D8B7A5C00D8175E /* MenuView.swift */,
-				22F2DC102D8B7A7600D8175E /* DetailDishView.swift */,
-				22F2DC122D8B7A8900D8175E /* RowDishView.swift */,
-				22EC04EA2D900193008B72B8 /* DishSectionView.swift */,
-				22F2DC142D8B7AA800D8175E /* SpicyView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,9 +110,6 @@
 			);
 			fileSystemSynchronizedGroups = (
 				223151E92D8B747900AD19F7 /* TaJMahal */,
-				2241A8732D8D6B850055723C /* Resources */,
-				22F2DC032D8B79B600D8175E /* Model */,
-				22F2DC042D8B79BF00D8175E /* ModelView */,
 			);
 			name = TaJMahal;
 			packageProductDependencies = (
@@ -180,9 +131,6 @@
 			dependencies = (
 				223151F92D8B747A00AD19F7 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				223151FA2D8B747A00AD19F7 /* TaJMahalTests */,
-			);
 			name = TaJMahalTests;
 			packageProductDependencies = (
 			);
@@ -202,9 +150,6 @@
 			);
 			dependencies = (
 				223152032D8B747A00AD19F7 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				223152042D8B747A00AD19F7 /* TaJMahalUITests */,
 			);
 			name = TaJMahalUITests;
 			packageProductDependencies = (
@@ -286,12 +231,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22F2DC0D2D8B7A5000D8175E /* WelcomeView.swift in Sources */,
-				22F2DC0F2D8B7A5C00D8175E /* MenuView.swift in Sources */,
-				22EC04EB2D900193008B72B8 /* DishSectionView.swift in Sources */,
-				22F2DC152D8B7AA800D8175E /* SpicyView.swift in Sources */,
-				22F2DC112D8B7A7600D8175E /* DetailDishView.swift in Sources */,
-				22F2DC132D8B7A8900D8175E /* RowDishView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
