@@ -12,7 +12,6 @@ struct WelcomeView: View {
         let viewModel: ViewModel
         
         var body: some View {
-                NavigationStack {
                         VStack(alignment: .leading, spacing: 15) {
                                 Image("TajMahal")
                                         .resizable()
@@ -91,8 +90,7 @@ struct WelcomeView: View {
                         .padding(.horizontal, 20)
                         .navigationTitle("")
                         .navigationBarHidden(true) //pas de barre du tout (ni titre, ni flèche)
-                }
-                .accentColor(.black)
+               
         }
 }
 
