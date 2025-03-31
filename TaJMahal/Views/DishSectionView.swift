@@ -13,7 +13,7 @@ struct DishSectionView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(title)
-                .font(Theme.FontSize.medium)
+                .font(Theme.FontSize.boldMedium)
                 .padding(.leading, 25)
                 .padding(.top)
 

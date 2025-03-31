@@ -23,22 +23,21 @@ struct RowDishView: View {
                         
                         VStack(alignment: .leading, spacing: 8) {
                                 Text(dish.name)
-                                        .font(Theme.FontSize.medium)
+                                        .font(Theme.FontSize.boldMedium)
                                         .foregroundColor(Theme.Colors.textGray)
                                         .padding(.top)
                                 Text(dish.description)
-                                        .font(Theme.FontSize.small)
+                                        .font(Theme.FontSize.extraLight)
                                         .foregroundColor(Theme.Colors.textGray)
                               
                                 HStack(alignment: .firstTextBaseline){
                                         Text("\(dish.price) €")
-                                                .font(Theme.FontSize.small)
+                                                .font(Theme.FontSize.boldPetit)
                                                 .foregroundColor(Theme.Colors.textGray)
                                         
                                         Spacer()
                                         
                                         SpicyView(dish: dish)
-                                            //    .padding(.trailing, 15)
                                 }
                         }
                         .padding(.leading, 4)

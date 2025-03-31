@@ -23,10 +23,10 @@ struct WelcomeView: View {
                                 HStack(alignment: .center) {
                                         VStack(alignment: .leading, spacing: 6) {
                                                 Text("Restaurant Indien")
-                                                        .font(Theme.FontSize.small)
+                                                        .font(Theme.FontSize.light)
                                                         .foregroundColor(Theme.Colors.textGray)
                                                 Text("Taj Mahal")
-                                                        .font(Theme.FontSize.large)
+                                                        .font(Theme.FontSize.bold)
                                         }
                                         .frame(width: 280, alignment: .leading)
                                         
@@ -41,42 +41,39 @@ struct WelcomeView: View {
                                 HStack(alignment: .bottom) {
                                         Image("Vector")
                                         Text("Mardi")
-                                                .font(Theme.FontSize.small)
+                                                .font(Theme.FontSize.light)
                                                 .foregroundStyle(.black)
                                         Spacer()
                                         Text("11H30-14h30 . 18h30-22h00")
-                                                .font(Theme.FontSize.small)
+                                                .font(Theme.FontSize.light)
                                                 .foregroundStyle(.black)
                                 }
                                 HStack {
                                         Image("Icône - Type de Service")
                                         Text("Type de Service")
-                                                .font(Theme.FontSize.small)
+                                                .font(Theme.FontSize.light)
                                         Spacer()
                                         Text("À emporter")
-                                                .font(Theme.FontSize.small)
+                                                .font(Theme.FontSize.light)
                                 }
                                 HStack {
                                         Image("Localisation")
                                         Text("12 Avenue de la Brique-75010 Paris")
-                                                .font(Theme.FontSize.small)
+                                                .font(Theme.FontSize.light)
                                 }
                                 HStack {
                                         Image("Site")
                                         Text("www.tajmahal.fr")
-                                                .font(Theme.FontSize.small)
+                                                .font(Theme.FontSize.light)
                                 }
                                 HStack {
                                         Image("Téléphone")
                                         Text("06 12 34 56 78")
-                                                .font(Theme.FontSize.small)
+                                                .font(Theme.FontSize.light)
                                 }
                                 //Le bouton fait partie de la VStack
                                 NavigationLink {
-                                        MenuView(
-                                                apetizers: viewModel.apetizerArray,
-                                                mainCourses: viewModel.mainCourseArray
-                                        )
+                                        MenuView()
                                 } label: {
                                         ZStack {
                                                 Color(Theme.Colors.redButton)

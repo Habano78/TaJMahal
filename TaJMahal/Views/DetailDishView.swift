@@ -33,7 +33,7 @@ struct DetailDishView: View {
                         VStack(alignment: .leading, spacing: 10) { //écartement entre les éléments de la VStack
                                 Section(header: Text("Allergènes:")) {
                                         Text(dish.allergens)
-                                                .font(Theme.FontSize.medium)
+                                                .font(Theme.FontSize.extraLight)
                                                 .foregroundColor(Color(red: 0.302, green: 0.302, blue: 0.302))
                                                 .multilineTextAlignment(.leading)
                                                 .lineSpacing(2)
@@ -43,11 +43,11 @@ struct DetailDishView: View {
                                 
                                 Section(header: Text("Ingrédients:")) {
                                         Text(dish.ingredients)
-                                                .font(Theme.FontSize.medium)
+                                                .font(Theme.FontSize.extraLight)
                                                 .foregroundColor(Theme.Colors.textGray)
                                                 .multilineTextAlignment(.leading) //simple retour a la ligne
                                                 .frame(maxWidth: .infinity, alignment: .leading) //Force le texte aller à gauche
-                                                .lineSpacing(2)
+                                                .lineSpacing(2) 
                                 }
                         }
                 }

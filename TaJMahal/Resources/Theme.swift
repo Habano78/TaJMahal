@@ -9,26 +9,20 @@
 import SwiftUI
 
 struct Theme {
-
-    //Polices maquette
+    // MARK: - Font Sizes
     struct FontSize {
-        static let small = Font.custom("Plus Jakarta Sans", size: 12)
-        static let medium = Font.custom("Plus Jakarta Sans", size: 14)
-        static let button = Font.custom("Plus Jakarta Sans", size: 16)
-        static let large = Font.custom("Plus Jakarta Sans", size: 18)
-            static let bold = Font.custom("PlusJakartaSans-ExtraLight", size: 18)
+        static let light = Font.custom("PlusJakartaSans-Light", size: 12)
+        static let boldMedium = Font.custom("PlusJakartaSans-Bold", size: 14)
+        static let bold = Font.custom("PlusJakartaSans-Bold", size: 18)
+        static let extraLight = Font.custom("PlusJakartaSans-ExtraLight", size: 12)
+        static let boldPetit = Font.custom("PlusJakartaSans-Bold", size: 12)
+        static let extraBold = Font.custom("PlusJakartaSans-ExtraBold", size: 8)
     }
-        
-    //Couleurs de l'app
+    
+    // MARK: - Colors
     struct Colors {
         static let textGray = Color(red: 0.302, green: 0.302, blue: 0.302)
         static let redButton = Color("CustomRed")
         static let background = Color.white
-    }
-
-    //Layout / Design
-    struct Layout {
-        static let cornerRadius: CGFloat = 10
-        static let padding: CGFloat = 20
     }
 }
