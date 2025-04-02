@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DetailDishView: View {
-        let dish: Dish
+        let dish: Dish// instance de Dish
         @Environment(\.dismiss) private var dismiss // pour gérer le retour
         
         
@@ -52,7 +52,7 @@ struct DetailDishView: View {
                         }
                 }
                 //SwiftUI affiche le titre de la vue précédente dans le bouton retour par défaut.Cette solution permet de cacher "Menu"
-                //SwiftUI ignore .font(...) sur navigationTitle.
+                // ignore .font(...) sur navigationTitle.
                 .padding(.horizontal, 20)
                 .navigationTitle(dish.name)
                 .navigationBarTitleDisplayMode(.inline)

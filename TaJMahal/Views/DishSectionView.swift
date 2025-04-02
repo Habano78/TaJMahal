@@ -7,29 +7,26 @@
 import SwiftUI
 
 struct DishSectionView: View {
-    let title: String
-    let dishes: [Dish]
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text(title)
-                .font(Theme.FontSize.boldMedium)
-                .padding(.leading, 25)
-                .padding(.top)
-
-            ForEach(dishes) { dish in
-                NavigationLink {
-                    DetailDishView(dish: dish)
-                } label: {
-                    RowDishView(dish: dish)
-                        .padding(.vertical, 1)
+        let dishes: [Dish]
+        
+        var body: some View {
+                
+                VStack(spacing: 8) {
+                        
+                        ForEach(dishes) { dish in
+                                NavigationLink {
+                                        DetailDishView(dish: dish)
+                                }
+                                label: {
+                                        RowDishView(dish: dish)
+                                                .padding(.vertical, 1)
+                                }
+                        }
                 }
-            }
+                .padding(.vertical,5)
         }
-    }
 }
 
 #Preview {
-        DishSectionView(title: "Entrées",
-                        dishes: [Dish.example])
+        DishSectionView(dishes: [Dish.example])
 }

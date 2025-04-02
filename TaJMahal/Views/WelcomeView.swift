@@ -62,7 +62,7 @@ struct WelcomeView: View {
                                 }
                                 HStack {
                                         Image("Site")
-                                        Text("www.tajmahal.fr")
+                                        Text("www.tajmahal.fr") //TODO: link?
                                                 .font(Theme.FontSize.light)
                                 }
                                 HStack {
@@ -76,13 +76,13 @@ struct WelcomeView: View {
                                 } label: {
                                         ZStack {
                                                 Color(Theme.Colors.redButton)
-                                                        .frame(height: 40)
+                                                        .frame(width: 335, height: 40)
+                                                        .cornerRadius(10)
                                                 Text("Accéder au menu")
                                                         .foregroundStyle(.white)
                                                         .font(Theme.FontSize.bold)
                                         }
                                         .frame(maxWidth: .infinity)
-                                        .cornerRadius(10)
                                         .padding(.top,10)
                                 }
                         }
