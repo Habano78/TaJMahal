@@ -14,7 +14,6 @@ struct DetailDishView: View {
         
         var body: some View {
                 VStack(alignment: .leading, spacing: 20) {
-                        
                         ZStack(alignment: .topTrailing) {
                                 Image(dish.imageName)
                                         .resizable()
@@ -22,7 +21,6 @@ struct DetailDishView: View {
                                         .scaledToFit()
                                         .clipped()
                                         .cornerRadius(12)
-                                
                                 SpicyView(dish: dish)
                                         .frame(width: 74, height: 22) //valeurs maquette
                                         .background(Theme.Colors.background)
@@ -31,46 +29,62 @@ struct DetailDishView: View {
                                         .padding(.horizontal,20)
                         }
                         VStack(alignment: .leading, spacing: 10) { //écartement entre les éléments de la VStack
-                                Section(header: Text("Allergènes:")) {
+                                Section {
                                         Text(dish.allergens)
                                                 .font(Theme.FontSize.extraLight)
                                                 .foregroundColor(Color(red: 0.302, green: 0.302, blue: 0.302))
                                                 .multilineTextAlignment(.leading)
                                                 .lineSpacing(2)
+                                } header: {
+                                        Text("Allergènes:")
+                                                .font(Theme.FontSize.boldMedium)
+                                                .foregroundColor(Theme.Colors.textGray)
                                 }
                                 
                                 Divider()
                                 
-                                Section(header: Text("Ingrédients:")) {
+                                Section{
                                         Text(dish.ingredients)
                                                 .font(Theme.FontSize.extraLight)
                                                 .foregroundColor(Theme.Colors.textGray)
                                                 .multilineTextAlignment(.leading) //simple retour a la ligne
                                                 .frame(maxWidth: .infinity, alignment: .leading) //Force le texte aller à gauche
-                                                .lineSpacing(2) 
+                                                .lineSpacing(2)
+                                } header: {
+                                        Text("Ingrédients:")
+                                                .font(Theme.FontSize.boldMedium)
+                                                .foregroundColor(Theme.Colors.textGray)
                                 }
                         }
                 }
                 //SwiftUI affiche le titre de la vue précédente dans le bouton retour par défaut.Cette solution permet de cacher "Menu"
                 // ignore .font(...) sur navigationTitle.
                 .padding(.horizontal, 20)
-                .navigationTitle(dish.name)
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarBackButtonHidden(true)
                 .toolbar {
                         ToolbarItem(placement: .navigationBarLeading) {
-                                Button(action: {
-                                        dismiss()
-                                }) {
-                                        Image(systemName: "chevron.left")
+                                HStack {
+                                        Button(action: {
+                                                dismiss()
+                                        }) {
+                                                Image(systemName: "chevron.left")
+                                                        .foregroundColor(.black)
+                                        }
+                                        Text(dish.name)
+                                                .font(Theme.FontSize.bold)
                                                 .foregroundColor(.black)
+                                                .padding(.leading, 8)
                                 }
+                                
                         }
                 }
         }
 }
 
 #Preview {
-        DetailDishView(dish: Dish.example)
+        NavigationView {
+                DetailDishView(dish: Dish.example)
+        }
 }
 

@@ -17,5 +17,4 @@ struct TaJMahalApp: App {
                         }.accentColor(.black)
                 }
         }
-        
 }
