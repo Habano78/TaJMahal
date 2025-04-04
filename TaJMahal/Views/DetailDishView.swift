@@ -11,7 +11,6 @@ struct DetailDishView: View {
         let dish: Dish// instance de Dish
         @Environment(\.dismiss) private var dismiss // pour gérer le retour
         
-        
         var body: some View {
                 VStack(alignment: .leading, spacing: 20) {
                         ZStack(alignment: .topTrailing) {
@@ -22,17 +21,17 @@ struct DetailDishView: View {
                                         .clipped()
                                         .cornerRadius(12)
                                 SpicyView(dish: dish)
-                                        .frame(width: 74, height: 22) //valeurs maquette
+                                        .frame(width: 74, height: 22)
                                         .background(Theme.Colors.background)
                                         .cornerRadius(10)
                                         .padding(.top, 15)
                                         .padding(.horizontal,20)
                         }
-                        VStack(alignment: .leading, spacing: 10) { //écartement entre les éléments de la VStack
+                        VStack(alignment: .leading, spacing: 10) {
                                 Section {
                                         Text(dish.allergens)
                                                 .font(Theme.FontSize.extraLight)
-                                                .foregroundColor(Color(red: 0.302, green: 0.302, blue: 0.302))
+                                                .foregroundColor(Theme.Colors.textGray)
                                                 .multilineTextAlignment(.leading)
                                                 .lineSpacing(2)
                                 } header: {
@@ -58,7 +57,6 @@ struct DetailDishView: View {
                         }
                 }
                 //SwiftUI affiche le titre de la vue précédente dans le bouton retour par défaut.Cette solution permet de cacher "Menu"
-                // ignore .font(...) sur navigationTitle.
                 .padding(.horizontal, 20)
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarBackButtonHidden(true)

@@ -21,7 +21,7 @@ struct Theme {
     
     // MARK: - Colors
     struct Colors {
-        static let textGray = Color(red: 0.302, green: 0.302, blue: 0.302)
+        static let textGray = Color(red: 102 / 255, green: 102 / 255, blue: 102 / 255)
         static let redButton = Color("CustomRed")
         static let background = Color.white
     }

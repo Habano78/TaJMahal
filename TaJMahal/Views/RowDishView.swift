@@ -29,14 +29,11 @@ struct RowDishView: View {
                                 Text(dish.description)
                                         .font(Theme.FontSize.extraLight)
                                         .foregroundColor(Theme.Colors.textGray)
-                              
                                 HStack(alignment: .firstTextBaseline){
-                                        Text("\(dish.price) €")
+                                        Text(dish.price.formattedPrice)
                                                 .font(Theme.FontSize.boldPetit)
                                                 .foregroundColor(Theme.Colors.textGray)
-                                        
                                         Spacer()
-                                        
                                         SpicyView(dish: dish)
                                 }
                         }

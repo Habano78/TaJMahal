@@ -8,9 +8,8 @@ import SwiftUI
 
 struct MenuView: View {
         let viewModel = ViewModel()
-        @Environment(\.dismiss) private var dismiss //
+        @Environment(\.dismiss) private var dismiss
         
-        // Structure pour les sections du menu
         struct MenuSection {
                 let title: String
                 let dishes: [Dish]
@@ -44,7 +43,7 @@ struct MenuView: View {
                                 .listRowInsets(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
                         }
                 }
-                .listRowSpacing(15)
+                .listRowSpacing(12)
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarBackButtonHidden(true)
                 .navigationBarHidden(false)
@@ -71,7 +70,3 @@ struct MenuView: View {
                 MenuView()
         }
 }
-
-//TODO: créer un fichier de constantes pour stocker mes valeurs de taille/padding. De façon à modifier directement les valeurs sur le même fichier. Taille de la police, etc. Horaires,Localisation (GPS)
-
-//MARK: fix text size

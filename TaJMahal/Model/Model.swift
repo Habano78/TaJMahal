@@ -24,7 +24,7 @@ enum SpiceLevel: Int, CaseIterable  {
                 var ingredients: String
                 var spiceLevel: SpiceLevel
                 var imageName: String
-                var price: String 
+                var price: Decimal
                 
                 
                 //faciliter les #Preview sans charger tout le ViewModel
@@ -35,9 +35,8 @@ enum SpiceLevel: Int, CaseIterable  {
                         ingredients: "Poulet, tomates, crème, épices indiennes, ail, oignon, coriandre",
                         spiceLevel: .medium,
                         imageName: "Tikka Masala",
-                        price: "13,50"
+                        price: 13.50
                     )
         }
-//TODO: les prix ont été typés en tant que "string". Modifier cela
         
 
