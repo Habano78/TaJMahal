@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct MenuView: View {
-        let viewModel = ViewModel()
+        @ObservedObject var viewModel: ViewModel
         @Environment(\.dismiss) private var dismiss
         
         struct MenuSection {

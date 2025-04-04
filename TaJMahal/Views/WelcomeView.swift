@@ -9,7 +9,7 @@ import SwiftUI
 
 // Page d'accueil
 struct WelcomeView: View {
-        let viewModel: ViewModel
+        @ObservedObject var viewModel: ViewModel
         
         var body: some View {
                         VStack(alignment: .leading, spacing: 15) {
@@ -18,7 +18,6 @@ struct WelcomeView: View {
                                         .scaledToFit()
                                         .frame(maxWidth: .infinity)
                                         .clipped()
-                               
                                 HStack(alignment: .center) {
                                         VStack(alignment: .leading, spacing: 6) {
                                                 Text("Restaurant Indien")
