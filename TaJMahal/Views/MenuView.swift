@@ -16,7 +16,7 @@ struct MenuView: View {
         }
         
         var body: some View {
-                // Créer les sections du menu
+                // Création des sections du menu
                 let menuSections = [
                         MenuSection(title: "Entrées", dishes: viewModel.apetizerArray),
                         MenuSection(title: "Plats Principaux", dishes: viewModel.mainCourseArray)
@@ -25,7 +25,8 @@ struct MenuView: View {
                 List {
                         ForEach(menuSections, id: \.title) { section in
                                 Section {
-                                        ForEach(section.dishes, id: \.name) { dish in
+                                        // parcourir les plats
+                                        ForEach(section.dishes) { dish in
                                                 ZStack {
                                                         RowDishView(dish: dish)
                                                         NavigationLink(destination: DetailDishView(dish: dish)) {

@@ -17,14 +17,14 @@ enum SpiceLevel: Int, CaseIterable  {
         
         // Représente l'objet "plat", qui figure sur la carte du menu
         struct Dish: Hashable, Identifiable {
-                var id: UUID = UUID() //proprieté rajoutée
+                var id: UUID = UUID() //proprieté rajoutée afin de garantir que chaque plat aura un id unique
                 var name: String
                 var description: String
                 var allergens: String
                 var ingredients: String
                 var spiceLevel: SpiceLevel
                 var imageName: String
-                var price: Decimal //type modifié
+                var price: Decimal //proprieté rajoutée. Typage modifié.
                 
                 
                 //faciliter les #Preview sans charger tout le ViewModel

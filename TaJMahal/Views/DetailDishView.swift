@@ -16,7 +16,6 @@ struct DetailDishView: View {
                         ZStack(alignment: .topTrailing) {
                                 Image(dish.imageName)
                                         .resizable()
-                                        .frame(maxWidth: .infinity) // l'image prend toute la largeur dispo
                                         .scaledToFit()
                                         .clipped()
                                         .cornerRadius(12)
