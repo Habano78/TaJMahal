@@ -71,7 +71,7 @@ struct WelcomeView: View {
                                 }
                                 //Le bouton fait partie de la VStack
                                 NavigationLink {
-                                        MenuView()
+                                        MenuView(viewModel: ViewModel())
                                 } label: {
                                         ZStack {
                                                 Color(Theme.Colors.redButton)

@@ -25,11 +25,11 @@ struct MenuView: View {
                 List {
                         ForEach(menuSections, id: \.title) { section in
                                 Section {
-                                        // Utilisation de la même approche que l'original avec ZStack et opacité
                                         ForEach(section.dishes, id: \.name) { dish in
                                                 ZStack {
                                                         RowDishView(dish: dish)
                                                         NavigationLink(destination: DetailDishView(dish: dish)) {
+                                                                // contenu invisible, NavigationLink se superpose à la cellule
                                                         }.opacity(0)
                                                 }
                                         }
@@ -67,6 +67,6 @@ struct MenuView: View {
 
 #Preview {
         NavigationView{
-                MenuView()
+                MenuView(viewModel: ViewModel())
         }
 }
