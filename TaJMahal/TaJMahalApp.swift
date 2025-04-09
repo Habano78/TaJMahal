@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct TaJMahalApp: App {
         // On crée une instance unique du ViewModel qui sera qui passera les données aux autres vues. 
-        @StateObject private var viewModel = ViewModel()
+        let viewModel = ViewModel()
         
         var body: some Scene {
                 WindowGroup {

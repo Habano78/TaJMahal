@@ -9,7 +9,7 @@ import SwiftUI
 
 // Page d'accueil
 struct WelcomeView: View {
-        @ObservedObject var viewModel: ViewModel
+        let viewModel: ViewModel
         
         var body: some View {
                         VStack(alignment: .leading, spacing: 15) {
