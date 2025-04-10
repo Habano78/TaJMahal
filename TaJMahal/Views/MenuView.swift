@@ -7,9 +7,10 @@
 import SwiftUI
 
 struct MenuView: View {
+        // à chaque fois que MenuView est créée elle reçois une instance de ViewModel. C'est la "porte d'entrée des données à afficher ici
        let  viewModel: ViewModel
         @Environment(\.dismiss) private var dismiss
-        
+        //cette structure m'aide à regrouper les données avant de les afficher.
         struct MenuSection {
                 let title: String
                 let dishes: [Dish]
@@ -23,6 +24,7 @@ struct MenuView: View {
                 ]
                 
                 List {
+                        //boucle sur les sections
                         ForEach(menuSections, id: \.title) { section in
                                 Section {
                                         // parcourir les plats
@@ -36,7 +38,7 @@ struct MenuView: View {
                                         }
                                 } header: {
                                         Text(section.title)
-                                                .textCase(nil)
+                                                .textCase(nil) // pas de majuscule par defaut
                                                 .foregroundColor(Theme.Colors.textGray)
                                                 .font(Theme.FontSize.boldMedium)
                                                 .padding(.bottom)

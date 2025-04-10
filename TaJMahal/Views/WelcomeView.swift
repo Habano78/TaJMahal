@@ -69,9 +69,9 @@ struct WelcomeView: View {
                                         Text("06 12 34 56 78")
                                                 .font(Theme.FontSize.light)
                                 }
-                                //Le bouton fait partie de la VStack
+                                //Création du "bouton" dans la VStack
                                 NavigationLink {
-                                        MenuView(viewModel: ViewModel())
+                                        MenuView(viewModel: viewModel)
                                 } label: {
                                         ZStack {
                                                 Color(Theme.Colors.redButton)

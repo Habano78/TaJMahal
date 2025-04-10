@@ -14,29 +14,29 @@ enum SpiceLevel: Int, CaseIterable  {
         case hot = 3
 }
 
+
+// Représente l'objet "plat", qui figure sur la carte du menu
+struct Dish: Hashable, Identifiable {
+        var id: UUID = UUID() //proprieté rajoutée afin de garantir que chaque plat aura un id unique
+        var name: String
+        var description: String
+        var allergens: String
+        var ingredients: String
+        var spiceLevel: SpiceLevel
+        var imageName: String
+        var price: Decimal //proprieté rajoutée. Typage modifié.
         
-        // Représente l'objet "plat", qui figure sur la carte du menu
-        struct Dish: Hashable, Identifiable {
-                var id: UUID = UUID() //proprieté rajoutée afin de garantir que chaque plat aura un id unique
-                var name: String
-                var description: String
-                var allergens: String
-                var ingredients: String
-                var spiceLevel: SpiceLevel
-                var imageName: String
-                var price: Decimal //proprieté rajoutée. Typage modifié.
-                
-                
-                //faciliter les #Preview sans charger tout le ViewModel
-                    static let example = Dish(
-                        name: "Chicken Tikka Masala",
-                        description: "Poulet mariné, grillé et servi dans une sauce masala crémeuse et légèrement épicée.",
-                        allergens: "Lait, yaourt, beurre clarifié",
-                        ingredients: "Poulet, tomates, crème, épices indiennes, ail, oignon, coriandre",
-                        spiceLevel: .medium,
-                        imageName: "Tikka Masala",
-                        price: 13.50
-                    )
-        }
         
+        //faciliter les #Preview sans charger tout le ViewModel
+        static let example = Dish(
+                name: "Chicken Tikka Masala",
+                description: "Poulet mariné, grillé et servi dans une sauce masala crémeuse et légèrement épicée.",
+                allergens: "Lait, yaourt, beurre clarifié",
+                ingredients: "Poulet, tomates, crème, épices indiennes, ail, oignon, coriandre",
+                spiceLevel: .medium,
+                imageName: "Tikka Masala",
+                price: 13.50
+        )
+}
+
 
