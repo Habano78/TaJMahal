@@ -63,7 +63,7 @@ struct DetailDishView: View {
                         ToolbarItem(placement: .navigationBarLeading) {
                                 HStack {
                                         Button(action: {
-                                                dismiss()
+                                               dismiss()
                                         }) {
                                                 Image(systemName: "chevron.left")
                                                         .foregroundColor(.black)
