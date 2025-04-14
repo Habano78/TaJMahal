@@ -22,3 +22,14 @@ extension Decimal {
         return formatted.replacingOccurrences(of: "\u{00a0}", with: "") // supprime l’espace insécable comme dans la maquette 
     }
 }
+
+
+@propertyWrapper
+struct Uppercase {
+    private var value: String = ""
+
+    var wrappedValue: String {
+        get { value.uppercased() }
+        set { value = newValue }
+    }
+}

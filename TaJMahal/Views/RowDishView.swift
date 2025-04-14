@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RowDishView: View {
+        //pour construire cette vue on doit lui fournir un plat en paramètre
         let dish: Dish
         
         var body: some View {

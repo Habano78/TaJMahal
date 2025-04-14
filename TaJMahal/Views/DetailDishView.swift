@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct DetailDishView: View {
-        let dish: Dish// instance de Dish
-        @Environment(\.dismiss) private var dismiss // pour gérer le retour
+        // instance de Dish et paramètre attendu pour le création de la vue
+        let dish: Dish
+        //demande d'accès à une fonction système, en l'occurrence la fonction de fermeture
+        @Environment(\.dismiss)
+        // nom local de la fonction dismiss()
+        private var dismiss
         
         var body: some View {
                 VStack(alignment: .leading, spacing: 20) {

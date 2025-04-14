@@ -13,7 +13,7 @@ struct TaJMahalApp: App {
                 WindowGroup {
                         //MARK: la NavigationStack doit être définie au niveau de l'app. Cohèrence et optimisation : elle devienne global pour toute l'application
                         NavigationStack {
-                                WelcomeView(viewModel: ViewModel())
+                                WelcomeView(viewModel: ViewModel()) //injection du viewModel
                         }.accentColor(.black)
                 }
         }
