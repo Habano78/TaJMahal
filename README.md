@@ -26,6 +26,6 @@ Rigueur du Typage : Prévu pour utiliser des types monétaires précis (Decimal 
 Tests Unitaires (XCTest)
 Isolation des Tests : Utilisation des méthodes setUp() et tearDown() pour garantir que chaque test s'exécute dans un environnement propre et isolé.
 
-Mocking et Injection de Dépendances : Le ViewModel est initialisé avec un repository simulé (mocked), assurant que les tests valident la logique métier sans dépendre des dépendances externes (API, base de données).
+Mocking et Injection de Dépendances : ViewModel initialisé avec un repository simulé (mocked), assurant que les tests valident la logique métier sans dépendre des dépendances externes (API, base de données).
 
 Contrôle d'Accès : Utilisation de l'attribut @testable pour un accès contrôlé aux types internal lors des tests.
