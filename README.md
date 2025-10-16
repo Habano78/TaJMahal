@@ -1,7 +1,9 @@
 TaJMahal Restaurant App (SwiftUI & MVVM)
-Insert a screenshot of the app in action here!
+
+Screenshot of the app in action here!
 
 Table of Contents
+
 Introduction
 
 Features
