@@ -1,31 +1,72 @@
-TaJMahal est une application mobile développée en SwiftUI permettent à l'utilisateur de consulter le menu d'un restaurant indien. 
-Le projet implemente en particulier une architecture MVVM (Model-View-ViewModel) ainsi que des tests unitaires.
+TaJMahal Restaurant App (SwiftUI & MVVM)
+Insert a screenshot of the app in action here!
 
-✨Fonctionnalités Clés
-Écran d'Accueil (Welcome View) : Présentation du restaurant avec les informations clés (horaires, adresse, contact).
-Menu Détaillé : Affichage du menu complet, structuré par sections (Entrées, Plats Principaux).
-Fiches Plats (Detail View) : Consultation des détails de chaque plat
+Table of Contents
+Introduction
 
-Navigation Intuitive : Utilisation de la navigation native de SwiftUI avec une personnalisation de la barre de navigation.
+Features
 
-🧱 Architecture Technique
-Ce projet est conçu en respectant les principes d'une architecture moderne et maintenable.
-1. SwiftUI
-L'interface est entièrement construite avec le framework déclaratif de Apple, assurant une UI réactive et un code plus concis.
-2. Pattern MVVM (Model-View-ViewModel)
-Model (Dish, SpiceLevel) : Définit les structures de données de l'application. La structure Dish implémente les protocoles Identifiable et Hashable.
-View (WelcomeView, MenuView, etc.) : Contient le code d'interface utilisateur et se concentre uniquement sur l'affichage.
-ViewModel : Gère la logique de l'application et prépare les données pour les vues.
+MVVM Architecture (Model - View - ViewModel)
 
-🛠️ Bonnes Pratiques Mises en Œuvre
-Modélisation des Données
-Sécurité des types : Utilisation d'un enum (SpiceLevel) pour gérer les niveaux d'épice.
+Getting Started
 
-Rigueur du Typage : Prévu pour utiliser des types monétaires précis (Decimal ou Double) pour la propriété price (évitant les String).
+Implemented Best Practices
 
-Tests Unitaires (XCTest)
-Isolation des Tests : Utilisation des méthodes setUp() et tearDown() pour garantir que chaque test s'exécute dans un environnement propre et isolé.
+Introduction
+TaJMahal is a mobile application developed in SwiftUI that allows users to browse the menu of an Indian restaurant. The project notably implements an MVVM (Model-View-ViewModel) architecture and includes unit tests.
 
-Mocking et Injection de Dépendances : ViewModel initialisé avec un repository simulé (mocked), assurant que les tests valident la logique métier sans dépendre des dépendances externes (API, base de données).
+Features
+Welcome Screen: Presents the restaurant with key information (hours, address, contact).
 
-Contrôle d'Accès : Utilisation de l'attribut @testable pour un accès contrôlé aux types internal lors des tests.
+Detailed Menu: Displays the full menu, structured by sections (Appetizers, Main Courses).
+
+Dish Detail View: Allows viewing the details of each dish.
+
+Intuitive Navigation: Uses SwiftUI's native navigation with a customized navigation bar.
+
+MVVM Architecture (Model - View - ViewModel)
+This project is designed following the principles of a modern and maintainable architecture.
+
+View
+Contains the user interface code and focuses solely on display.
+
+In this project: WelcomeView, MenuView, DetailView, etc.
+
+ViewModel
+Manages the application's logic and prepares data for the views.
+
+Model
+Defines the application's data structures. The Dish structure implements the Identifiable and Hashable protocols.
+
+In this project: Dish, SpiceLevel
+
+Getting Started
+Prerequisites
+Xcode 15 or later.
+
+iOS 16 or later.
+
+Installation
+Clone the repository to your local machine:
+
+git clone [https://github.com/Habano78/TaJMahal.git](https://github.com/Habano78/TaJMahal.git)
+
+Open the .xcodeproj file in Xcode.
+
+Build and run the project on your preferred simulator or physical device.
+
+Usage
+Launch the app and explore the menu 💪
+
+Implemented Best Practices
+Data Modeling
+Type Safety: Uses an enum (SpiceLevel) to manage spice levels securely.
+
+Strict Typing: Designed to use precise monetary types (Decimal or Double) for the price property (avoiding String).
+
+Unit Testing (XCTest)
+Test Isolation: Uses setUp() and tearDown() methods to ensure each test runs in a clean and isolated environment.
+
+Mocking and Dependency Injection: The ViewModel is initialized with a mocked repository, ensuring that tests validate business logic without depending on external dependencies (API, database).
+
+Access Control: Uses the @testable attribute for controlled access to internal types during testing.
