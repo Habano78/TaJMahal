@@ -1,74 +1,79 @@
-TaJMahal Restaurant App (SwiftUI & MVVM)
+TaJMahal Restaurant App
+TaJMahal is a SwiftUI iOS application developed to showcase the menu of a fictional Indian restaurant. It serves as a practical example of a modern, test-driven approach to iOS development, focusing on clean architecture and best practices.
 
-Screenshot of the app in action here!
-
-Table of Contents
-
-Introduction
-
-Features
-
-MVVM Architecture (Model - View - ViewModel)
-
-Getting Started
-
-Implemented Best Practices
-
-Introduction
-TaJMahal is a mobile application developed in SwiftUI that allows users to browse the menu of an Indian restaurant. The project notably implements an MVVM (Model-View-ViewModel) architecture and includes unit tests.
-
-Features
+🚀 Features
 Welcome Screen: Presents the restaurant with key information (hours, address, contact).
 
-Detailed Menu: Displays the full menu, structured by sections (Appetizers, Main Courses).
+Structured Menu: Displays the full menu, organized by sections (e.g., Appetizers, Main Courses).
 
-Dish Detail View: Allows viewing the details of each dish.
+Detailed Dish View: Allows users to view detailed information for each dish.
 
-Intuitive Navigation: Uses SwiftUI's native navigation with a customized navigation bar.
+Intuitive Navigation: Built with native SwiftUI navigation, including a customized navigation bar for a seamless user experience.
 
-MVVM Architecture (Model - View - ViewModel)
-This project is designed following the principles of a modern and maintainable architecture.
+🏛️ Architecture & Tech Stack
+This project was built with a strong focus on clean architecture, testability, and modern development practices.
 
-View
-Contains the user interface code and focuses solely on display.
+MVVM (Model-View-ViewModel): The core architecture provides a clear separation of concerns between the UI (View), the presentation logic and state (ViewModel), and the data (Model).
 
-In this project: WelcomeView, MenuView, DetailView, etc.
+SwiftUI: The entire user interface is built declaratively with SwiftUI, leveraging its powerful tools for building responsive and maintainable views.
 
-ViewModel
-Manages the application's logic and prepares data for the views.
+Protocol-Oriented Programming (POP): Dependencies, such as data repositories, are abstracted using protocols. This is key to the app's testability, allowing for easy mocking.
 
-Model
-Defines the application's data structures. The Dish structure implements the Identifiable and Hashable protocols.
+Dependency Injection (DI): The ViewModel is initialized with a mocked repository in the tests, ensuring that business logic is validated in isolation from external dependencies.
 
-In this project: Dish, SpiceLevel
+Data Modeling: The data is strongly typed for safety and clarity.
 
-Getting Started
-Prerequisites
-Xcode 15 or later.
+Dish model conforms to Identifiable and Hashable for easy use in SwiftUI lists and collections.
 
-iOS 16 or later.
+An enum (SpiceLevel) is used to securely manage spice level options.
 
-Installation
-Clone the repository to your local machine:
+Unit Testing (XCTest): The project includes a suite of unit tests for its business logic.
+
+Tests are isolated using setUp() and tearDown() methods.
+
+The @testable attribute is used for controlled access to internal types during testing.
+
+📂 Project Structure
+The project is organized into logical layers to facilitate navigation and maintainability:
+
+TaJMahal/
+├── Models/
+│   ├── Dish.swift          # Business model for a dish
+│   └── SpiceLevel.swift    # Enum for spice levels
+├── ViewModels/
+│   └── MenuViewModel.swift # Logic for the menu view (example)
+├── Views/
+│   ├── WelcomeView.swift
+│   ├── MenuView.swift
+│   └── DetailView.swift
+├── Repositories/
+│   └── DishRepository.swift # Provides dish data (mocked for this project)
+└── TaJMahalApp.swift       # Main app entry point
+
+TaJMahalTests/
+└── TaJMahalTests.swift     # Unit tests for the ViewModel
+
+⚙️ Getting Started
+To clone and run the project locally, follow these steps:
+
+Clone the repository:
 
 git clone [https://github.com/Habano78/TaJMahal.git](https://github.com/Habano78/TaJMahal.git)
 
-Open the .xcodeproj file in Xcode.
+Open the project in Xcode:
 
-Build and run the project on your preferred simulator or physical device.
+cd TaJMahal
+open TaJMahal.xcodeproj
 
-Usage
-Launch the app and explore the menu 💪
+Run the application:
 
-Implemented Best Practices
-Data Modeling
-Type Safety: Uses an enum (SpiceLevel) to manage spice levels securely.
+Select a simulator or a physical device.
 
-Strict Typing: Designed to use precise monetary types (Decimal or Double) for the price property (avoiding String).
+Press Cmd+R to build and run the app.
 
-Unit Testing (XCTest)
-Test Isolation: Uses setUp() and tearDown() methods to ensure each test runs in a clean and isolated environment.
+✅ Running Tests
+The project includes a suite of unit tests. To run them:
 
-Mocking and Dependency Injection: The ViewModel is initialized with a mocked repository, ensuring that tests validate business logic without depending on external dependencies (API, database).
+Open the Test Navigator in Xcode (Cmd+6).
 
-Access Control: Uses the @testable attribute for controlled access to internal types during testing.
+Click the play button next to the TaJMahalTests target or press Cmd+U.
